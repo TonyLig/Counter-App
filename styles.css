@@ -78,7 +78,21 @@ body {
 }
 
 .btn:active {
-  box-shadow: 4px 4px 12px #c5c5c5, -4px -4px 12px #ffffff;
+  box-shadow: 4px 4px 12px #ffffff, -8px -8px 12px #ffffff;
+}
+.blue-light:hover {
+  border: 1px solid white;
+}
+
+.blue-light:active {
+  box-shadow: 4px 4px 12px #509be1, -4px -4px 12px #5b9ee7;
+}
+.red-light:hover {
+  border: 1px solid white;
+}
+
+.red-light:active {
+  box-shadow: 4px 4px 12px #ea4343, -4px -4px 12px #e85866;
 }
 
 /* END counter */

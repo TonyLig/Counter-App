@@ -1,4 +1,4 @@
-# Customizable and Responsive Counter Interface
+# Responsive Counter Interface
 
 Hello, I am a JavaScript beginner, and I am proud to present my customizable and responsive counter interface.
 
@@ -13,3 +13,4 @@ Here are some of the benefits you can expect from my interface:
 
 I hope you enjoy using my customizable and responsive counter interface, and I look forward to hearing your feedback.
 
+# [Go to the App Counter](https://tonylig.github.io/Counter-App/)

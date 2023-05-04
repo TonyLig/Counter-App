@@ -1,27 +1,41 @@
 const count = document.querySelector("#center-number");
-const buttons = document.querySelector(".button-container");
+const buttons = document.querySelectorAll(".btn");
 
-buttons.addEventListener("click", (e) => {
-  if (e.target.classList.contains("add")) {
-    count.innerHTML++;
+let counter = 0;
+
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    if (button.classList.contains("subtract")) {
+      counter--;
+    } else if (button.classList.contains("add")) {
+      counter++;
+    } else {
+      counter = 0;
+    }
+
+    count.innerHTML = counter;
     setColor();
-  }
-  if (e.target.classList.contains("subtract")) {
-    count.innerHTML--;
-    setColor();
-  }
-  if (e.target.classList.contains("reset")) {
-    count.innerHTML = 0;
-    setColor();
-  }
+    playSound();
+  });
 });
 
+// to change color
 function setColor() {
-  if (count.innerHTML > 0) {
+  if (counter > 0) {
     count.style.color = "#5b9ee7";
-  } else if (count.innerHTML < 0) {
+  } else if (counter < 0) {
     count.style.color = "#ea4343";
   } else {
     count.style.color = "black";
   }
+}
+
+// add audio to try asynchronous programming
+function playSound() {
+  const audio = new Audio("assets/sounds/click.mp3");
+  audio.currentTime = 0.0;
+  audio.play();
+  setTimeout(function () {
+    audio.pause();
+  }, 1000);
 }

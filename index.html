@@ -29,15 +29,15 @@
   <body>
     <div class="flex-wrap">
       <div class="container">
-        <div class="show-number"><span id="center-number">0</span></div>
+        <div class="show-number"><span id="center-number"></span></div>
         <div class="button-container">
           <button class="btn subtract red-light">
             <span class="material-symbols-outlined subtract">
               remove
               </span>
           </button>
-          <button class="btn reset">
-            <span class="material-symbols-sharp reset"> restart_alt </span>
+          <button class="btn">
+            <span class="material-symbols-sharp"> restart_alt </span>
           </button>
           <button class="btn add blue-light">
             <span class="material-symbols-outlined add"> add </span>
@@ -45,6 +45,8 @@
         </div>
       </div>
     </div>
+    <!-- ADD audio -->
+    <audio id="click-sound" src="assets/sounds/click.mp3"></audio>
     <script src="assets/js/script.js"></script>
   </body>
 </html>

@@ -1,22 +1,13 @@
 const count = document.querySelector("#center-number");
 const buttons = document.querySelectorAll(".btn");
-const subtractIcon = document.createElement("span");
-const restartIcon = document.createElement("span");
-const addIcon = document.createElement("span");
-
-subtractIcon.classList.add("material-symbols-outlined");
-subtractIcon.innerText = "remove";
-restartIcon.classList.add("material-symbols-sharp");
-restartIcon.innerText = "restart_alt";
-addIcon.classList.add("material-symbols-outlined");
-addIcon.innerText = "add";
 
 let counter = 0;
 
-buttons[0].appendChild(subtractIcon);
-buttons[1].appendChild(restartIcon);
-buttons[2].appendChild(addIcon);
+create(buttons[0], "span", ["material-symbols-outlined"], "remove");
+create(buttons[1], "span", ["material-symbols-sharp"], "restart_alt");
+create(buttons[2], "span", ["material-symbols-outlined"], "add");
 
+// logic
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
     if (button.classList.contains("subtract")) {
@@ -33,6 +24,14 @@ buttons.forEach((button) => {
   });
 });
 
+// creates dom elements
+function create(parent, element, classes, text) {
+  const el = document.createElement(element);
+  classes.forEach((c) => el.classList.add(c));
+  el.innerText = text;
+  parent.appendChild(el);
+}
+
 // to change color
 function setColor() {
   if (counter > 0) {
@@ -44,8 +43,7 @@ function setColor() {
   }
 }
 
-
-// add audio to try asynchronous programming
+// trying to use asynchronous programming
 function playSound() {
   const audio = new Audio("assets/sounds/click.mp3");
   audio.currentTime = 0.0;

@@ -1,3 +1,4 @@
+// logic elements
 const count = document.querySelector("#center-number");
 const buttons = document.querySelectorAll(".btn");
 
